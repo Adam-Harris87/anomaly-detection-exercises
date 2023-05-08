@@ -3,4 +3,5 @@ env.py
 .ipynb_checkpoints/
 __pycache__
 *.csv
+curriculum_logs.csv
 anonymized-curriculum-access.txt
