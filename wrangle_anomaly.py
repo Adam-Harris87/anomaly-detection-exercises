@@ -30,8 +30,8 @@ def acquire_web_traffic():
         connection = env.get_db_url(database)
         # create sql query
         query = '''
-select l.date, l.time, l.path, l.user_id, l.cohort_id as cohort_name,
-	l.ip, c.name, c.start_date, c.end_date, c.program_id
+select l.date, l.time, l.path, l.user_id, l.cohort_id,
+	l.ip, c.name as cohort_name, c.start_date, c.end_date, c.program_id
 from logs l
 join cohorts c
 	on l.cohort_id = c.id
