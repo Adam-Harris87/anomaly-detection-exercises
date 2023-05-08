@@ -33,7 +33,7 @@ def acquire_web_traffic():
 select l.date, l.time, l.path, l.user_id, l.cohort_id,
 	l.ip, c.name as cohort_name, c.start_date, c.end_date, c.program_id
 from logs l
-join cohorts c
+left join cohorts c
 	on l.cohort_id = c.id
 ;
         '''
