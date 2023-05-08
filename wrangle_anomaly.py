@@ -56,8 +56,8 @@ def prepare_web_traffic(traffic):
     traffic.datetime = pd.to_datetime(traffic.datetime)
     # drop the redundant date and time columns and set datetime as the index
     traffic = traffic.drop(columns=['date', 'time']).set_index('datetime')
-    # drop null rows (there's only 1)
-    traffic = traffic.dropna()
+    # drop null rows in path (there's only 1)
+    traffic = traffic[traffic.path.isna() == False]
     # convert first part of website path into column called lesson
     # create an empty list
     page_list=[]
